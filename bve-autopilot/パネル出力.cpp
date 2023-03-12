@@ -85,6 +85,15 @@ namespace autopilot
                 return main.tasc有効() &&
                     main.tasc状態().制御中(main.状態().現在時刻());
             })},
+            {L"tascpower", パネル出力対象([](const Main &main) {
+                if (!main.tasc有効() || main.ato一時停止中() ||
+                    !main.インチング中())
+                {
+                    return 0;
+                }
+                return static_cast<int>(
+                    main.tasc状態().出力ノッチ().力行成分().value);
+            })},
             {L"tascbrake", パネル出力対象([](const Main & main) {
                 if (!main.tasc有効() || main.ato一時停止中()) {
                     return 0;
@@ -143,6 +152,20 @@ namespace autopilot
                 auto m =
                     std::fmod(main.状態().現在時刻().経過時間().value, 1.0);
                 return m < 0.5 ? 3 : 4;
+            })},
+            {L"atopower", パネル出力対象([](const Main &main) {
+                if (!main.ato有効() || main.ato一時停止中()) {
+                    return 0;
+                }
+                return static_cast<int>(
+                    main.ato状態().出力ノッチ().力行成分().value);
+            })},
+            {L"atobrake", パネル出力対象([](const Main &main) {
+                if (!main.ato有効() || main.ato一時停止中()) {
+                    return 0;
+                }
+                return static_cast<int>(
+                    main.ato状態().出力ノッチ().制動成分().value);
             })},
             {L"powerthrottle", パネル出力対象([](const Main &main) {
                 return main.ato有効() && main.力行抑止中();
