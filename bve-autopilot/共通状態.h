@@ -117,9 +117,11 @@ namespace autopilot {
         int 前回逆転器ノッチ() const noexcept { return _前回出力.Reverser; }
         /// 抑速ノッチでは値は負になる
         int 前回力行ノッチ() const noexcept { return _前回出力.Power; }
+        出力元 前回力行出力元() const noexcept { return _前回出力力行元; }
         制動指令 前回制動指令() const noexcept {
             return 制動指令{_前回出力.Brake};
         }
+        出力元 前回制動出力元() const noexcept { return _前回出力制動元; }
         bool 力行をやめた直後である() const noexcept;
         キー組合せ 押しているキー() const noexcept { return _押しているキー; }
 

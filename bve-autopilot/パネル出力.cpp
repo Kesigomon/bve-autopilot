@@ -74,8 +74,24 @@ namespace autopilot
             {L"brakein", パネル出力対象([](const Main &main) {
                 return main.状態().入力制動ノッチ().value;
             })},
+            {L"brakeinused", パネル出力対象([](const Main &main) -> int {
+                if (main.状態().前回制動出力元() == 出力元::手動) {
+                    return main.状態().入力制動ノッチ().value;
+                }
+                else {
+                    return 0;
+                }
+            })},
             {L"powerin", パネル出力対象([](const Main &main) {
                 return main.状態().入力力行ノッチ();
+            })},
+            {L"powerinused", パネル出力対象([](const Main &main) {
+                if (main.状態().前回力行出力元() == 出力元::手動) {
+                    return main.状態().入力力行ノッチ();
+                }
+                else {
+                    return 0;
+                }
             })},
 
             {L"tascenabled", パネル出力対象([](const Main & main) {
@@ -94,12 +110,28 @@ namespace autopilot
                 return static_cast<int>(
                     main.tasc状態().出力ノッチ().力行成分().value);
             })},
+            {L"tascpowerused", パネル出力対象([](const Main &main) {
+                if (main.状態().前回力行出力元() == 出力元::tasc) {
+                    return main.状態().前回力行ノッチ();
+                }
+                else {
+                    return 0;
+                }
+            })},
             {L"tascbrake", パネル出力対象([](const Main & main) {
                 if (!main.tasc有効() || main.ato一時停止中()) {
                     return 0;
                 }
                 return static_cast<int>(
                     main.tasc状態().出力ノッチ().制動成分().value);
+            })},
+            {L"tascbrakeused", パネル出力対象([](const Main &main) -> int {
+                if (main.状態().前回制動出力元() == 出力元::tasc) {
+                    return main.tasc状態().出力ノッチ().制動成分().value;
+                }
+                else {
+                    return 0;
+                }
             })},
             {L"tascdistance", パネル出力対象([](const Main &main) {
                 cm 残距離 =
@@ -160,12 +192,28 @@ namespace autopilot
                 return static_cast<int>(
                     main.ato状態().出力ノッチ().力行成分().value);
             })},
+            {L"atopowerused", パネル出力対象([](const Main &main) -> int {
+                if (main.状態().前回力行出力元() == 出力元::ato) {
+                    return main.状態().前回力行ノッチ();
+                }
+                else {
+                    return 0;
+                }
+            })},
             {L"atobrake", パネル出力対象([](const Main &main) {
                 if (!main.ato有効() || main.ato一時停止中()) {
                     return 0;
                 }
                 return static_cast<int>(
                     main.ato状態().出力ノッチ().制動成分().value);
+            })},
+            {L"atobrakeused", パネル出力対象([](const Main &main) -> int {
+                if (main.状態().前回制動出力元() == 出力元::ato) {
+                    return main.ato状態().出力ノッチ().制動成分().value;
+                }
+                else {
+                    return 0;
+                }
             })},
             {L"powerthrottle", パネル出力対象([](const Main &main) {
                 return main.ato有効() && main.力行抑止中();
