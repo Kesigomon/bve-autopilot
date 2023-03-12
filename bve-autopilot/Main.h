@@ -18,12 +18,14 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA  02110 - 1301  USA
 
 #pragma once
+#include <utility>
 #include <vector>
 #include <unordered_map>
 #include "ato.h"
 #include "tasc.h"
 #include "稼働状態.h"
 #include "共通状態.h"
+#include "制御指令.h"
 #include "音声出力.h"
 
 namespace autopilot
@@ -108,6 +110,7 @@ namespace autopilot
 
         void モード切替(bool 順方向, bool ループ);
         void 地上子通過執行(m 直前位置);
+        std::pair<自動制御指令, 出力元> 自動指令を選択() const;
     };
 
 }

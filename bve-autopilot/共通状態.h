@@ -33,6 +33,11 @@
 
 namespace autopilot {
 
+    enum class 出力元
+    {
+        手動, tasc, ato,
+    };
+
     enum class 互換モード型
     {
         無効,
@@ -51,7 +56,8 @@ namespace autopilot {
         void 車両仕様設定(const ATS_VEHICLESPEC & 仕様);
         void 地上子通過(const ATS_BEACONDATA &地上子, m 直前位置);
         void 経過(const ATS_VEHICLESTATE & 状態);
-        void 出力(const ATS_HANDLES & 出力) noexcept;
+        void 出力(const ATS_HANDLES &出力, 出力元 力行元, 出力元 制動元)
+            noexcept;
         void 戸閉(bool 戸閉) noexcept;
         void 逆転器操作(int ノッチ) noexcept;
         void 力行操作(int ノッチ) noexcept;
@@ -134,6 +140,7 @@ namespace autopilot {
         制動特性 _制動特性;
         勾配グラフ _勾配グラフ;
         ATS_HANDLES _前回出力 = {};
+        出力元 _前回出力力行元, _前回出力制動元;
         時刻 _力行をやめた時刻 = static_cast<時刻>(-s::無限大());
 
         void 勾配追加(int 地上子値, m 直前位置);
