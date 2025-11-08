@@ -99,17 +99,22 @@ Bve trainsim 5.8.7554.391 および BVE Trainsim 6.0.7554.619 で動作確認し
 
 ## Rust Migration / Rust移行プロジェクト
 
-このプロジェクトをRustに移行する計画が進行中です。詳細は以下のドキュメントを参照してください：
+このプロジェクトをRustに移行する計画が進行中です。詳細は`docs/`ディレクトリのドキュメントを参照してください。
 
-**📘 [RUST_MIGRATION_GUIDE.md](RUST_MIGRATION_GUIDE.md)** - **ここから始めてください / START HERE**
+**📘 [docs/RUST_MIGRATION_GUIDE.md](docs/RUST_MIGRATION_GUIDE.md)** - **ここから始めてください / START HERE**
 - ドキュメント構造の説明
 - 各ドキュメントの使い方
 - クイックスタートガイド
 
 **関連ドキュメント:**
-- 📗 [CURRENT_STRUCTURE.md](CURRENT_STRUCTURE.md) - 現在のC++コードベースの構造
-- 📕 [RUST_MIGRATION_PLAN.md](RUST_MIGRATION_PLAN.md) - Rust移行戦略と命名規則
-- 📙 [MIGRATION_TODO.md](MIGRATION_TODO.md) - フェーズごとの詳細タスクリスト
+- 📗 [docs/CURRENT_STRUCTURE.md](docs/CURRENT_STRUCTURE.md) - 現在のC++コードベースの構造
+- 📕 [docs/RUST_MIGRATION_PLAN.md](docs/RUST_MIGRATION_PLAN.md) - Rust移行戦略と命名規則
+- 📙 [docs/MIGRATION_TODO.md](docs/MIGRATION_TODO.md) - フェーズごとの詳細タスクリスト
+
+**実装時の注意:**
+- 実装を開始する前に **[CLAUDE.md](CLAUDE.md)** を必ず読んでください
+- すべてのドキュメントは `docs/` ディレクトリにあります
+- 日本語の変数名・関数名は必ず英語に翻訳してください
 
 **移行の特徴:**
 - メモリ安全性の向上（Rustの所有権システム）

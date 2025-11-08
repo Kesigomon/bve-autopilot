@@ -13,18 +13,20 @@ bve-autopilot/
 ├── README.md                      # Original project documentation
 ├── algorithm.md                   # Algorithm documentation (Japanese)
 ├── LICENSE                        # LGPL 2.1 License
+├── CLAUDE.md                      # Instructions for Claude/AI assistants
 │
-├── 📘 RUST_MIGRATION_GUIDE.md     # ← START HERE / ここから始める
-│   └── This document (you are here)
-│
-├── 📗 CURRENT_STRUCTURE.md        # Current C++ codebase documentation
-│   └── Reference for understanding existing code
-│
-├── 📕 RUST_MIGRATION_PLAN.md      # Overall migration strategy
-│   └── High-level plan and architecture
-│
-└── 📙 MIGRATION_TODO.md           # Detailed task checklist
-    └── Phase-by-phase implementation tasks
+└── docs/                          # Migration documentation
+    ├── 📘 RUST_MIGRATION_GUIDE.md     # ← START HERE / ここから始める
+    │   └── This document (you are here)
+    │
+    ├── 📗 CURRENT_STRUCTURE.md        # Current C++ codebase documentation
+    │   └── Reference for understanding existing code
+    │
+    ├── 📕 RUST_MIGRATION_PLAN.md      # Overall migration strategy
+    │   └── High-level plan and architecture
+    │
+    └── 📙 MIGRATION_TODO.md           # Detailed task checklist
+        └── Phase-by-phase implementation tasks
 ```
 
 ---
@@ -33,7 +35,7 @@ bve-autopilot/
 
 ### 1. 📘 RUST_MIGRATION_GUIDE.md (This Document)
 
-**Location:** `/home/user/bve-autopilot/RUST_MIGRATION_GUIDE.md`
+**Location:** `/home/user/bve-autopilot/docs/RUST_MIGRATION_GUIDE.md`
 
 **Purpose / 目的:**
 - Entry point for the Rust migration project
@@ -50,7 +52,7 @@ bve-autopilot/
 
 ### 2. 📗 CURRENT_STRUCTURE.md
 
-**Location:** `/home/user/bve-autopilot/CURRENT_STRUCTURE.md`
+**Location:** `/home/user/bve-autopilot/docs/CURRENT_STRUCTURE.md`
 
 **Purpose / 目的:**
 - Comprehensive documentation of the existing C++20 codebase
@@ -85,7 +87,7 @@ bve-autopilot/
 
 ### 3. 📕 RUST_MIGRATION_PLAN.md
 
-**Location:** `/home/user/bve-autopilot/RUST_MIGRATION_PLAN.md`
+**Location:** `/home/user/bve-autopilot/docs/RUST_MIGRATION_PLAN.md`
 
 **Purpose / 目的:**
 - Overall migration strategy and approach
@@ -129,7 +131,7 @@ bve-autopilot/
 
 ### 4. 📙 MIGRATION_TODO.md
 
-**Location:** `/home/user/bve-autopilot/MIGRATION_TODO.md`
+**Location:** `/home/user/bve-autopilot/docs/MIGRATION_TODO.md`
 
 **Purpose / 目的:**
 - Detailed task breakdown for each phase
