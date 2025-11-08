@@ -97,6 +97,30 @@ Bve trainsim 5.8.7554.391 および BVE Trainsim 6.0.7554.619 で動作確認し
 
 ![bve-autopilot クラス図](https://docs.google.com/drawings/d/e/2PACX-1vS04CQzvJoFkLqhHuT_zZZW-YbpnRhUtPCcCVHPN-CMPTM_-LAcdUqEHE2YRKOrQcYnIqTFau8X7KWR/pub?w=960&h=720)
 
+## Rust Migration / Rust移行プロジェクト
+
+このプロジェクトをRustに移行する計画が進行中です。詳細は以下のドキュメントを参照してください：
+
+**📘 [RUST_MIGRATION_GUIDE.md](RUST_MIGRATION_GUIDE.md)** - **ここから始めてください / START HERE**
+- ドキュメント構造の説明
+- 各ドキュメントの使い方
+- クイックスタートガイド
+
+**関連ドキュメント:**
+- 📗 [CURRENT_STRUCTURE.md](CURRENT_STRUCTURE.md) - 現在のC++コードベースの構造
+- 📕 [RUST_MIGRATION_PLAN.md](RUST_MIGRATION_PLAN.md) - Rust移行戦略と命名規則
+- 📙 [MIGRATION_TODO.md](MIGRATION_TODO.md) - フェーズごとの詳細タスクリスト
+
+**移行の特徴:**
+- メモリ安全性の向上（Rustの所有権システム）
+- 英語での変数名・関数名（国際的な貢献を促進）
+- モダンなツール（Cargo、クレートエコシステム）
+- 型安全な物理量システム（uomクレート使用）
+
+**進捗状況:** Phase 1 準備中（20週間の計画）
+
+---
+
 ## 質問・問い合わせ
 
 - [ツイッター](https://twitter.com/tnacigam)で
