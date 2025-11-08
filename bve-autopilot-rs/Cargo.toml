@@ -1,0 +1,33 @@
+[package]
+name = "bve-autopilot"
+version = "2.0.0"
+edition = "2021"
+authors = ["Watanabe, Yuki"]
+license = "LGPL-2.1"
+description = "TASC/ATO plugin for BVE trainsim - Rust implementation"
+
+[lib]
+name = "bve_autopilot"
+crate-type = ["cdylib", "rlib"]  # cdylib for Windows DLL, rlib for testing
+
+[dependencies]
+uom = "0.36"  # Units of measurement
+serde = { version = "1.0", features = ["derive"] }
+serde_ini = "0.2"  # For .ini file parsing
+windows = { version = "0.52", features = ["Win32_Foundation"] }
+
+[dev-dependencies]
+approx = "0.5"  # For floating-point comparisons in tests
+criterion = "0.5"  # For benchmarking
+
+[[bench]]
+name = "control_benchmarks"
+harness = false
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
